@@ -27,3 +27,6 @@ def entities():
     doc = get_nlp()(text)
     entities = sorted({ent.text.lower() for ent in doc.ents})
     return jsonify({"entities": entities})
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",  debug=True)
